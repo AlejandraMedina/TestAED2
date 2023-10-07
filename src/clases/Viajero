@@ -6,14 +6,16 @@ import java.util.Objects;
 //agregar atributos par viajeros
 
 public class Viajero implements Comparable<Viajero>{
+    private String cedula;
     private String nombre;
     private int edad;
+    TipoViajero tipo ;
 
-    public Viajero(String nombre) {
-        this.nombre = nombre;
+    public Viajero(String cedula) {
+        this.cedula = cedula;
     }
 
-    public Viajero(String nombre, int edad) {
+    public Viajero(String cedula, String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
     }
