@@ -1,39 +1,40 @@
 package com.company;
+import clases.
 
-public class ABB<T extends Comparable<T>> {
+public class ABB<Viajero extends Comparable<Viajero>> {
 
-    private Nodo<T> raiz;
+    private Nodo<Viajero> raiz;
 
-    public void insertar(T dato) {
+    public void insertar(Viajero dato) {
         if (this.raiz == null) {
-            this.raiz = new Nodo<T>(dato);
+            this.raiz = new Nodo<Viajero>(dato);
         } else {
             insertarRec(raiz, dato);
         }
     }
 
     //pre nodo != null
-    private void insertarRec(Nodo<T> nodo, T dato) {
+    private void insertarRec(Nodo<Viajero> nodo, Viajero dato) {
         if (dato.compareTo(nodo.getDato()) > 0) {
             if (nodo.getDer() == null) {
-                nodo.setDer(new Nodo<T>(dato));
+                nodo.setDer(new Nodo<Viajero>(dato));
             } else {
                 insertarRec(nodo.getDer(), dato);
             }
         } else {
             if (nodo.getIzq() == null) {
-                nodo.setIzq(new Nodo<T>(dato));
+                nodo.setIzq(new Nodo<Viajero>(dato));
             } else {
                 insertarRec(nodo.getIzq(), dato);
             }
         }
     }
 
-    public boolean existe(T dato) {
+    public boolean existe(Viajero dato) {
         return existeRec(raiz, dato);
     }
 
-    private boolean existeRec(Nodo<T> nodo, T dato) {
+    private boolean existeRec(Nodo<T> nodo, Viajero dato) {
         if (nodo == null) {
             return false;
         } else if (nodo.getDato().equals(dato)) {
@@ -47,11 +48,11 @@ public class ABB<T extends Comparable<T>> {
         }
     }
 
-    public T obtener(T dato) {
+    public Viajero obtener(Viajero dato) {
         return obtener(raiz, dato);
     }
 
-    private T obtener(Nodo<T> nodo, T dato) {
+    private Viajero obtener(Nodo<Viajero> nodo, Viajero dato) {
         if (nodo == null) {
             return null;
         } else if (nodo.getDato().equals(dato)) {
@@ -69,7 +70,7 @@ public class ABB<T extends Comparable<T>> {
         listarAsc(raiz);
     }
 
-    private void listarAsc(Nodo<T> nodo) {
+    private void listarAsc(Nodo<Viajero> nodo) {
         if (nodo != null) {
             listarAsc(nodo.getIzq());
             System.out.println(nodo.getDato());
@@ -81,7 +82,7 @@ public class ABB<T extends Comparable<T>> {
         listarDes(raiz);
     }
 
-    private void listarDes(Nodo<T> nodo) {
+    private void listarDes(Nodo<Viajero> nodo) {
         if (nodo != null) {
             listarDes(nodo.getDer());
             System.out.println(nodo.getDato());

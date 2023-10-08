@@ -10,22 +10,40 @@ public class ImplementacionSistema implements Sistema {
     @Override
     public Retorno inicializarSistema(int maxCiudades) {
 
-        Retorno r = new Retorno (Retorno.Resultado.NO_IMPLEMENTADA);
-
         if(maxCiudades > 5  ){
             viajeros = new ABB<Viajero>();
             ciudades = new Grafo<Ciudad>();
-            r.resultado = Retorno.Resultado.OK;
+            Retorno.Resultado.OK;
         }
         else{
-            r.resultado = Retorno.Resultado.ERROR;
+          Retorno.Resultado.ERROR;
         }
-            return r;
+        Retorno.Resultado.NO_IMPLEMENTADA);
         }
     }
 
     @Override
     public Retorno registrarViajero(String cedula, String nombre, int edad, TipoViajero tipo) {
+
+        //Nodo de viajero
+        Viajero viajero = new Viajero(cedula,nombre, edad, tipo);
+
+        if (viajeros.esVacia())
+        {
+            viajeros.agregarInicio(viajero);
+            Retorno.Resultado.OK;
+        }
+        else
+        {
+            if ( !viajeros.existe(viajero) ) {
+                //Agrega el viajero al final de la lista de viajeros para que quede en orden alfabetico.
+                viajeros.insertar(viajero);
+                Retorno.Resultado.OK;
+            } else {
+                r.resultado = Retorno.Resultado.ERROR_1;
+            }
+        }
+
         return Retorno.noImplementada();
     }
 

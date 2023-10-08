@@ -10,15 +10,18 @@ public class Viajero implements Comparable<Viajero>{
     private String cedula;
     private String nombre;
     private int edad;
-    TipoViajero tipo ;
+    TipoViajero tipo = new TipoViajero();
 
     public Viajero(String cedula) {
         this.cedula = cedula;
     }
 
-    public Viajero(String cedula, String nombre, int edad) {
-        this.nombre = nombre;
-        this.edad = edad;
+    public Viajero(String unaCedula, String unNombre, int unaEdad, TipoViajero unTipo) {
+        this.cedula = unaCedula;
+        this.nombre = unNombre;
+        this.edad = unaEdad;
+        this.tipo = unTipo;
+        //Validar();  ver las validaciones para tirar a consola segun error
     }
 
     public String getNombre() {
@@ -67,6 +70,13 @@ public class Viajero implements Comparable<Viajero>{
     public int compareTo(Viajero o) {
         return this.nombre.compareTo(o.nombre);
     }
+
+
+
+    private boolean Validar(){
+        return (this.cedula.ValidarCedular() && this.nombre.ValidadNombre() && this.edad.ValidarEdad() && this.tipo.ValidarTipo());
+    }
+
 
 //Funciòn para validar la cédula
 
