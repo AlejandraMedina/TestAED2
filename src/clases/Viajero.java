@@ -2,6 +2,9 @@ package com.company;
 
 import java.util.Objects;
 
+//permite utilizar expresiones regulares para la validaciòn de cèdula
+import java.util.regex.*;
+
 
 public class Viajero implements Comparable<Viajero>{
     private String cedula;
@@ -64,4 +67,15 @@ public class Viajero implements Comparable<Viajero>{
     public int compareTo(Viajero o) {
         return this.nombre.compareTo(o.nombre);
     }
+
+//Funciòn para validar la cedula
+
+    private boolean ValidarCedula(String cedula) {
+
+        // Expresión regular para validar cédula que tenga  formatos N.NNN.NNN-N o NNN.NNN-N
+        String cadena = "^(\\d{1,3}\\.\\d{3}\\.\\d{3}-\\d{1}|\\d{3}\\.\\d{3}-\\d{1})$";
+
+         return(cedula.matches(cadena);     //matches es una función de java que corrobora si una cadena coincide con una expresión regular.
+        }
+
 }
