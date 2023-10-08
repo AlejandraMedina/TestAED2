@@ -68,7 +68,7 @@ public class Viajero implements Comparable<Viajero>{
         return this.nombre.compareTo(o.nombre);
     }
 
-//Funciòn para validar la cedula
+//Funciòn para validar la cédula
 
     private boolean ValidarCedula(String cedula) {
 
