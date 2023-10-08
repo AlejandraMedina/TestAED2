@@ -1,9 +1,11 @@
 package grafo;
 
+import clases.*;
+
 public class Arista {
 
     private boolean existe;
-    private int peso;
+    public Conexion conexion;
 
     public Arista() {
         this.existe = false;

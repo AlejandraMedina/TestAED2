@@ -1,4 +1,4 @@
-ackage com.company;
+package com.company;
 
 public class ABB<T extends Comparable<T>> {
 

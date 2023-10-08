@@ -1,12 +1,27 @@
 package sistema;
 
 import interfaz.*;
+import clases.*;
+import grafo.*;
 
 public class ImplementacionSistema implements Sistema {
 
+    //Caso uso 01- iniciarSistema
     @Override
     public Retorno inicializarSistema(int maxCiudades) {
-        return Retorno.noImplementada();
+
+        Retorno r = new Retorno (Retorno.Resultado.NO_IMPLEMENTADA);
+
+        if(maxCiudades > 5  ){
+            viajeros = new ABB<Viajero>();
+            ciudades = new Grafo<Ciudad>();
+            r.resultado = Retorno.Resultado.OK;
+        }
+        else{
+            r.resultado = Retorno.Resultado.ERROR;
+        }
+            return r;
+        }
     }
 
     @Override
