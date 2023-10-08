@@ -5,7 +5,7 @@ import clases.*;
 public class Arista {
 
     private boolean existe;
-    public Conexion conexion;
+    public TipoConexion conexion;
 
     public Arista() {
         this.existe = false;

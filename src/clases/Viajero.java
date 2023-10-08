@@ -3,8 +3,6 @@ package com.company;
 import java.util.Objects;
 
 
-//agregar atributos par viajeros
-
 public class Viajero implements Comparable<Viajero>{
     private String cedula;
     private String nombre;
